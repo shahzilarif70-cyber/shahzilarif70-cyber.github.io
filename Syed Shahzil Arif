@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Muhammad Shahzil Arif</title>
+  <style>
+    /* 🌈 Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      color: #333;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #ff5e94;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    section h2 {
+      color: #ff5e94;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ff5e94;
+      display: inline-block;
+    }
+
+    section p {
+      color: #555;
+      line-height: 1.8;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* 🌟 Buttons */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ff5e94;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff8cb0;
+      box-shadow: 0 0 15px #ffb6c1;
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      section { margin: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Syed Muhammad Shahzil Arif</h1>
+    <p>💻 Student | Dreamer | Future Developer</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>My name is <b>Syed Muhammad Shahzil Arif</b>. I’m a passionate learner and love exploring technology, programming, and creativity. I always aim to learn something new every day and grow into a better version of myself.</p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <p>🌟 HTML, CSS, JavaScript<br>
+       🧠 Python & Cybersecurity Basics<br>
+       💡 Creative Thinking and Problem Solving</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can contact me through email:<br>
+       <a href="mailto:shahzil@example.com" class="btn">📧 Send Email</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 | Made with 💖 by Shahzil
+  </footer>
+
+  <script>
+    // 🎀 Typewriter Animation for Header Text
+    const headerText = document.querySelector("header h1");
+    const text = headerText.textContent;
+    headerText.textContent = "";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        headerText.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
