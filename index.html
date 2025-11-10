@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Syed Muhammad Shahzil Arif — Personal</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --text:#123; --accent:#ff5e94;
+      --muted:#6b6f76; --glass: rgba(255,255,255,0.6);
+    }
+    [data-theme="dark"]{
+      --bg:#0b0f14; --card:#071018; --text:#dbe7ff; --accent:#ff8cb0;
+      --muted:#9aa6b2; --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Poppins", sans-serif;
+      background: linear-gradient(180deg,var(--bg),#e9eef7); color:var(--text); -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; padding:24px;
+    }
+
+    .container{max-width:1000px; margin:0 auto; display:grid; grid-template-columns: 1fr; gap:20px;}
+
+    header.top{
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+    }
+    .brand{display:flex; gap:14px; align-items:center;}
+    .avatar{
+      width:72px; height:72px; border-radius:14px; overflow:hidden; flex-shrink:0;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08); background:linear-gradient(135deg,#ffdce6,#d3f7f2);
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff;
+    }
+    .brand h1{font-size:20px; margin:0}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+
+    .controls{display:flex; gap:8px; align-items:center;}
+    .btn{
+      background:var(--accent); color:#fff; padding:8px 12px; border-radius:12px; text-decoration:none; font-weight:600;
+      box-shadow:0 6px 20px rgba(255,94,148,0.12); border:none; cursor:pointer;
+    }
+    .icon-btn{background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px; border-radius:10px; cursor:pointer;}
+    [data-theme="dark"] .icon-btn{border-color: rgba(255,255,255,0.06)}
+
+    /* Hero */
+    .hero{
+      display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:center;
+    }
+    .intro{background:var(--card); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+    .intro h2{margin:0 0 6px; font-size:28px; color:var(--text)}
+    .intro p.lead{margin:0 0 14px; color:var(--muted)}
+    .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{background:linear-gradient(90deg, rgba(255,94,148,0.12), rgba(255,140,176,0.06)); padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px; color:var(--accent)}
+
+    .profile-card{
+      background:var(--card); border-radius:16px; padding:18px; text-align:center; box-shadow:0 10px 30px rgba(15,23,42,0.05);
+    }
+    .profile-photo{width:140px; height:140px; border-radius:20px; overflow:hidden; margin:0 auto 12px; background:var(--glass); display:flex; align-items:center; justify-content:center; font-size:28px; color:var(--accent)}
+    .profile-card h3{margin:6px 0 4px}
+    .profile-card p{margin:0; color:var(--muted); font-size:14px}
+    .socials{display:flex; gap:8px; justify-content:center; margin-top:12px}
+    .socials a{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; text-decoration:none; background:rgba(0,0,0,0.03); color:var(--text)}
+
+    /* Sections */
+    section.card{background:var(--card); border-radius:14px; padding:18px; box-shadow:0 8px 24px rgba(15,23,42,0.04)}
+    section.card h3{margin:0 0 10px; color:var(--accent)}
+
+    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    .skills-list{display:flex; flex-direction:column; gap:10px}
+    .skill{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .skill .name{font-weight:600; color:var(--muted)}
+    .progress{height:10px; background:rgba(0,0,0,0.06); border-radius:999px; overflow:hidden; flex:1; margin-left:10px}
+    .progress > i{display:block; height:100%; background:linear-gradient(90deg,var(--accent), #ffb3cc); width:50%}
+
+    /* Projects */
+    .projects{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px}
+    .project{
+      border-radius:12px; padding:12px; background:linear-gradient(180deg, rgba(0,0,0,0.01), transparent);
+      border:1px solid rgba(0,0,0,0.04)
+    }
+    .project h4{margin:0 0 6px}
+    .project p{margin:0; color:var(--muted); font-size:13px}
+
+    footer{margin-top:10px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .container{padding:12px}
+    }
+    /* Small nice animations */
+    .fade-in{animation:fadeIn .9s ease both}
+    @keyframes fadeIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="top fade-in">
+      <div class="brand">
+        <div class="avatar">S</div>
+        <div>
+          <h1>Syed Muhammad Shahzil Arif</h1>
+          <p>17 • Forward Science School • Aspiring Web Developer</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+        <a class="btn" id="downloadCV" href="#" download>Download CV</a>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="intro card fade-in">
+        <h2>Assalamualaikum, main Shahzil hoon 👋</h2>
+        <p class="lead">Mein 17 saal ka student hoon, Forward Science School se parhta hoon. Mujhe programming, cybersecurity aur creative design pasand hai. Ye mera personal portfolio hai — yahan meri skills aur projects dekho.</p>
+
+        <div class="badges">
+          <div class="badge">HTML</div>
+          <div class="badge">CSS</div>
+          <div class="badge">JavaScript</div>
+          <div class="badge">Python</div>
+        </div>
+
+        <section class="card" style="margin-top:16px;">
+          <h3>Contact</h3>
+          <p style="margin:6px 0">Email: <a href="mailto:shahzil@example.com">shahzil@example.com</a></p>
+          <p style="margin:6px 0">Phone / WhatsApp: <em>+92-3xx-xxxxxxx</em> (replace karo apna)</p>
+        </section>
+      </div>
+
+      <aside class="profile-card fade-in">
+        <div class="profile-photo" id="photo">Upload</div>
+        <h3>Syed M. Shahzil Arif</h3>
+        <p>Student • Web Developer in training</p>
+
+        <div class="socials">
+          <a href="#" title="GitHub" id="github">GH</a>
+          <a href="#" title="Instagram" id="insta">IG</a>
+          <a href="mailto:shahzil@example.com" title="Email">✉️</a>
+        </div>
+      </aside>
+    </main>
+
+    <section class="card fade-in">
+      <h3>Skills</h3>
+      <div class="skills-list">
+        <div class="skill"><span class="name">HTML</span><div class="progress"><i style="width:95%"></i></div></div>
+        <div class="skill"><span class="name">CSS</span><div class="progress"><i style="width:90%"></i></div></div>
+        <div class="skill"><span class="name">JavaScript</span><div class="progress"><i style="width:75%"></i></div></div>
+        <div class="skill"><span class="name">Python</span><div class="progress"><i style="width:60%"></i></div></div>
+      </div>
+    </section>
+
+    <section class="card fade-in">
+      <h3>Projects</h3>
+      <div class="projects">
+        <div class="project">
+          <h4>Personal Website</h4>
+          <p>A simple responsive website built with HTML, CSS and JS. Live link: (update with your GitHub Pages URL)</p>
+        </div>
+        <div class="project">
+          <h4>Simple Quiz App</h4>
+          <p>JavaScript quiz for practice. (Add link or description)</p>
+        </div>
+        <div class="project">
+          <h4>Cyber Basics</h4>
+          <p>Notes & mini projects for cybersecurity basics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card fade-in">
+      <h3>Get in touch</h3>
+      <form id="contactForm" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+        <input type="text" id="name" placeholder="Your name" style="padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.06)">
+        <input type="email" id="email" placeholder="Your email" style="padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.06)">
+        <textarea id="message" rows="4" placeholder="Message" style="padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.06)"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formMsg" style="color:var(--muted); font-size:13px; margin:0;"></p>
+      </form>
+    </section>
+
+    <footer class="fade-in">© 2025 • Made with ❤️ by Shahzil</footer>
+  </div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    // Load saved theme
+    if(localStorage.getItem('theme') === 'dark') root.setAttribute('data-theme','dark');
+    themeToggle.onclick = () => {
+      if(root.getAttribute('data-theme') === 'dark'){
+        root.removeAttribute('data-theme'); localStorage.setItem('theme','light'); themeToggle.textContent = '🌙';
+      } else {
+        root.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark'); themeToggle.textContent = '☀️';
+      }
+    };
+
+    // Contact form (client-only simulation)
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const n = document.getElementById('name').value.trim();
+      const em = document.getElementById('email').value.trim();
+      const m = document.getElementById('message').value.trim();
+      if(!n || !em || !m){
+        formMsg.textContent = 'Please fill all fields.';
+        return;
+      }
+      // Simulate sending
+      formMsg.textContent = 'Message ready to send — (this demo does not actually send).';
+      form.reset();
+      setTimeout(()=>{ formMsg.textContent = 'Thank you! I will contact you soon.' }, 700);
+    });
+
+    // Simple profile photo upload (client-side preview)
+    // If you want to allow upload, uncomment below and add an <input type="file"> element in future.
+    const photo = document.getElementById('photo');
+    photo.addEventListener('click', ()=> {
+      alert('To change the profile photo: replace the #photo element with an <img> tag and upload your image file to your GitHub repo. Ask me if you want step-by-step.');
+    });
+
+    // Download CV button (update href to your CV file path in repo)
+    document.getElementById('downloadCV').href = 'cv.pdf'; // <-- upload cv.pdf to repo root or change path
+
+    // Social links: update these to your real profiles
+    document.getElementById('github').href = 'https://github.com/shahzilarif70-cyber';
+    document.getElementById('insta').href = 'https://instagram.com/your_instagram';
+  </script>
+</body>
+</html>
